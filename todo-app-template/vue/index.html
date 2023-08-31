@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo App Template</title>
+  </head>
+  <body>
+    <main>
+        <header>
+          <h1>Todo</h1>
+          <img id="languageLogo" src="images/languageLogo.svg" alt="Vue Logo" />
+        </header>
+        <form>
+          <input aria-label="Create a new todo..." type="text" placeholder="Create a new todo..." value="" />
+          <button id="createTodo">+</button>
+        </form>
+        <div id="todoList">
+          <div id="todoListHeader">
+            <span>0 items left</span>
+            <ul id="todoFilters">
+              <li class="active">
+                <button>All</button>
+              </li>
+              <li>
+                <button>Active</button>
+              </li>
+              <li>
+                <button>Completed</button>            
+              </li>
+            </ul>
+            <button id="clearCompleted">Clear Completed</button>
+          </div>
+          <ul id="todoListBody">
+            <li class="checked">
+              <button class="todoStatus">&#10003;</button>
+              <span class="todoText">This is a wonderful list item</span>
+              <button class="removeTodo">
+                <img class="deleteLogo" src="images/deleteTodoLogo.svg" alt="Delete Todo" />
+              </button>
+            </li>
+            <li>
+              <button class="todoStatus">&#10003;</button>
+              <span class="todoText">This is a wonderful list item 2</span>
+              <button class="removeTodo">
+                <img class="deleteLogo" src="images/deleteTodoLogo.svg" alt="Delete Todo" />
+              </button>
+            </li>
+            <li>
+              <button class="todoStatus">&#10003;</button>
+              <span class="todoText">This is a wonderful list item 3</span>
+              <button class="removeTodo">
+                <img class="deleteLogo" src="images/deleteTodoLogo.svg" alt="Delete Todo" />
+              </button>
+            </li>
+          </ul>
+        </div>
+      </main>
+  </body>
+</html>

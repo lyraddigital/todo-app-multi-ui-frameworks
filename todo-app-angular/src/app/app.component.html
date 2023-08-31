@@ -1,0 +1,49 @@
+<main>
+  <header>
+    <h1>Todo</h1>
+    <img id="languageLogo" src="assets/images/languageLogo.svg" alt="Angular Logo" />
+  </header>
+  <form (submit)="addTodo($event)">
+    <input type="text" name="todoText" [(ngModel)]="todoText" placeholder="Create a new todo..." value="" />
+    <button type="submit" id="createTodo">+</button>
+  </form>
+  <div id="todoList">
+    <div id="todoListHeader">
+      <span>{{ numberOfTodos }} items left</span>
+      <ul id="todoFilters">
+        <li [class.active]="isFilterType('All')">
+          <button (click)="toggleFilterType('All')">All</button>
+        </li>
+        <li [class.active]="isFilterType('Active')">
+          <button (click)="toggleFilterType('Active')">Active</button>
+        </li>
+        <li [class.active]="isFilterType('Completed')">
+          <button (click)="toggleFilterType('Completed')">Completed</button>            
+        </li>
+      </ul>
+      <button id="clearCompleted" (click)="deleteAllCompleted()">Clear Completed</button>
+    </div>
+    <ul id="todoListBody">
+      <li *ngFor="let todo of filteredTodos" [class.checked]="todo.isCompleted">
+        <button class="todoStatus" (click)="toggleComplete(todo)">&#10003;</button>
+        <span class="todoText" (click)="toggleComplete(todo)">{{ todo.text }}</span>
+        <button class="removeTodo" (click)="deleteTodo(todo)">
+          <img class="deleteLogo" src="assets/images/deleteTodoLogo.svg" alt="Delete Todo" />
+        </button>
+      </li>      
+    </ul>
+  </div>
+</main>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>

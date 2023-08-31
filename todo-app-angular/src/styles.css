@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #42a5f5;
+    --primary-dark-color: #0d47a1;
+    --alternate-color: #DD0031;
+    --alternate-dark-color: #C3002F;
+    --light-color: #FFF;
+    --default-text-color: #777;
+    --box-shadow-color: rgba(194, 195, 214, 0.5);
+    --filter-hover-color: #111;
+    --todo-bottom-line-color: rgba(0, 0, 0, 0.1);
+    --todo-check-border-color: #CCC;
+    --box-shadow-style: 30px 30px 50px var(--box-shadow-color); 
+}
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 10px;
+  }
+  
+  body {
+    display: grid;
+    justify-content: center;
+    background: linear-gradient(
+      180deg,
+      var(--primary-color),
+      var(--primary-dark-color)
+    );
+    background-repeat: no-repeat;
+    background-size: 100vw 35vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    color: var(--default-text-color);
+  }

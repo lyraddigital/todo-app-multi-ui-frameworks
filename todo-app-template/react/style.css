@@ -1,0 +1,225 @@
+:root {
+  --primary-color: #282c34;
+  --primary-dark-color: #20232a;
+  --light-color: #fff;
+  --alternate-color: #61dafb;
+  --alternate-dark-color: #5dadbd;
+  --default-text-color: #777;
+  --box-shadow-color: rgba(194, 195, 214, 0.5);
+  --filter-hover-color: #111;
+  --todo-bottom-line-color: rgba(0, 0, 0, 0.1);
+  --todo-check-border-color: #ccc;
+  --box-shadow-style: 10px 10px 50px var(--box-shadow-color); 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    var(--primary-color),
+    var(--primary-dark-color)
+  );
+  background-repeat: no-repeat;
+  background-size: 100vw 35vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  color: var(--default-text-color);
+}
+
+main {
+  width: 100%;
+  min-width: 540px;
+  max-width: 540px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    color: var(--light-color);
+}
+
+#languageLogo {
+    width: 48px;
+    height: 48px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  background: var(--light-color);
+  padding: 20px;
+  box-shadow: var(--box-shadow-style);
+  border-radius: 5px;
+}
+
+input {
+  flex: 1;
+  font-size: 1.8rem;
+  border: 1px solid transparent;
+  outline: none;
+  background: transparent;
+}
+
+#createTodo {
+  background: var(--alternate-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: var(--light-color);
+  border-radius: 100%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#createTodo:hover,
+#createTodo:active {
+  background: var(--alternate-dark-color);
+}
+
+#todoList {
+  background: var(--light-color);
+  box-shadow: var(--box-shadow-style);
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 5px;
+}
+
+#todoListHeader {
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  color: var(--default-text-color);
+  padding-bottom: 15px;
+}
+
+#todoFilters {
+  display: flex;
+  column-gap: 10px;
+  list-style: none;
+}
+
+#todoFilters button {
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--default-text-color);
+}
+
+#todoFilters > li.active > button {
+  color: var(--alternate-color);
+}
+
+#clearCompleted {
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--default-text-color);
+}
+
+#todoFilters > li > button:hover,
+#clearCompleted:hover {
+  color: var(--filter-hover-color);
+}
+
+#todoListBody {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#todoListBody > li {
+  display: flex;
+  font-size: 1.8rem;
+  column-gap: 8px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--todo-bottom-line-color);
+}
+
+#todoListBody > li:first-of-type {
+  padding-top: 0;
+}
+
+#todoListBody > li:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#todoListBody .todoStatus {
+  height: 24px;
+  width: 24px;
+  color: var(--light-color);
+  border: 1px solid var(--todo-check-border-color);
+  border-radius: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+#todoListBody .todoStatus:hover {
+  border: 1px solid var(--primary-color);
+}
+
+#todoListBody > li {
+  cursor: pointer;
+}
+
+#todoListBody > li.checked .todoStatus {
+  border: 1px solid var(--alternate-color);
+  background: linear-gradient(
+    135deg,
+    var(--alternate-color),
+    var(--alternate-dark-color)
+  );
+}
+
+#todoListBody > li .todoText {
+  flex: 1;
+}
+
+#todoListBody > li.checked .todoText {
+  text-decoration: line-through;
+}
+
+#todoListBody > li .removeTodo {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#todoListBody > li .deleteLogo {
+  opacity: 0;
+  width: 18px;
+  height: 18px;
+  fill: var(--primary-dark-color);
+  transition: opacity 200ms;
+}
+
+#todoListBody > li:hover .deleteLogo {
+  opacity: 1;
+}
